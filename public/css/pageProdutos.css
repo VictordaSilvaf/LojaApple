@@ -1,0 +1,27 @@
+.produtoProdutos {
+    height: auto;
+    width: 15vw;
+    margin: 5px;
+    border-radius: 34px;
+    padding: 15px;
+}
+.imagemProdutos {
+    text-align: center;
+    vertical-align:middle;
+    display:table-cell;
+
+    margin: 0 auto;
+    height: 75%;
+    width: auto;
+
+}
+#navProdutos {
+    height: 50px;
+    width: 100%;
+    background-color: #616161;
+    border-radius: 20px;
+    padding: 6px;
+}
+.pesquisarProdutos {
+    margin-right: 20px;
+}

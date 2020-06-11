@@ -1,0 +1,66 @@
+/* General Blueprint Style */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@font-face {
+	font-family: 'bpicons';
+	font-weight: normal;
+	font-style: normal;
+    src: url('/public/font/fontsProdutos/bpicons/bpicons.eot');
+    src: url('/public/font/fontsProdutos/bpicons/bpicons.eot?#iefix') format('embedded-opentype'),
+    url('/public/font/fontsProdutos/bpicons/bpicons.woff') format('woff'),
+    url('/public/font/fontsProdutos/bpicons/bpicons.ttf') format('truetype'),
+    url('/public/font/fontsProdutos/bpicons/bpicons.svg#bpicons') format('svg');
+} /* Made with http://icomoon.io/ */
+
+/* Resets */
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+body,
+html {
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* Helper classes */
+.cf:before,
+.cf:after {
+	content: ' ';
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+.hidden {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* Main styles */
+body {
+	font-family: Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	color: #CECECE;
+	background: #2A2B30;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: #f0f0f0;
+	outline: none;
+}
+
+a:hover {
+	color: #5C5EDC;
+}
