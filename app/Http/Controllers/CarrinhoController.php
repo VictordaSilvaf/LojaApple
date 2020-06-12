@@ -6,6 +6,7 @@ use App\CupomDesconto;
 use App\Pedido;
 use App\PedidoProduto;
 use App\Models\Produto;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CarrinhoController extends Controller
@@ -27,7 +28,7 @@ class CarrinhoController extends Controller
         return view('carrinho.index', compact('pedidos'));
     }
 
-    public function adicionar(Produto $produto)
+    public function adicionar(Request $req)
     {
 
         $this->middleware('VerifyCsrfToken');
@@ -35,7 +36,8 @@ class CarrinhoController extends Controller
         $req = Request();
         $idproduto = $req->input('id');
 
-        $produto = Produto::find($idproduto);
+        $produto = Produto::create($req->all());
+
         if( empty($produto->id) ) {
             $req->session()->flash('mensagem-falha', 'Produto não encontrado em nossa loja!');
             return redirect()->route('carrinho.index');

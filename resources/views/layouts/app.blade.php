@@ -6,6 +6,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
+    @yield('head')
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -22,14 +23,14 @@
     <link rel="shortcut icon" href="{{ asset('img/icons8-mac-os-24.png') }}">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @yield('head')
+
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm fixed-top" style="padding: 0 0 0 10px !important;">
             <div class="container">
                 <a class="navbar-brand text-white" href="{{ url('/') }}" style="padding: 0px !important;">
-                    <span style="font-size: 2.2em;">
+                    <span style="font-size: 2.2em;" id="iconeBanner">
                         <i class="fab fa-apple size: 9x"></i>
                     </span>
                 </a>
@@ -80,6 +81,20 @@
         </nav>
 
         <main class="py-4">
+
+            <div class="float-left" style="display: table; position: relative; height: 100vh; z-index: 1">
+                <ul class="btn-group-vertical" style=" position: fixed; top: 45%; display: table-cell; vertical-align: middle; padding: 0">
+                    <a href="{{ route('produto.index') }}" class="btn btn-outline-primary">
+                        Produtos
+                    </a>
+                    <a href="{{ route('carrinho.compras') }}" class="btn btn-outline-primary">
+                        Pedidos
+                    </a>
+                    <a href="/home/cupons" class="btn btn-outline-primary">
+                        Cupons
+                    </a>
+                </ul>
+            </div>
             @yield('content')
         </main>
 

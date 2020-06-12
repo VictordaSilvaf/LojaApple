@@ -15,6 +15,6 @@ class PedidoProduto extends Model
 
     public function produto()
     {
-        return $this->belongsTo('App\Produto', 'produto_id', 'id');
+        return $this->belongsTo('App\Models\Produto', 'produto_id', 'id');
     }
 }

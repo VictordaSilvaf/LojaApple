@@ -3,20 +3,7 @@
     <link rel="stylesheet" href="{{ asset('css/cssCupons/styles.css') }}">
 @endsection
 @section('content')
-    <div class="row">
-        <div class="col-1" style="display: table; position: relative; height: 100vh; z-index: 1">
-            <ul class="list-group" style=" position: fixed; top: 45%; display: table-cell; vertical-align: middle;">
-                <a href="{{ route('produto.index') }}">
-                    <li class="list-group-item">Produtos</li>
-                </a>
-                <a href="#">
-                    <li class="list-group-item">Pedidos</li>
-                </a>
-                <a href="/home/cupons">
-                    <li class="list-group-item">Cupons</li>
-                </a>
-            </ul>
-        </div>
+    <div class="container">
             <div class="col-10 tabelaConteudo" style="margin-top: 60px; z-index: 0">
                 <h3 class="text-center mb-4">Lista de cupons de desconto</h3>
                 @if (Session::has('admin-mensagem-sucesso'))

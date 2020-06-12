@@ -1,15 +1,14 @@
-@extends('layout')
-@section('pagina_titulo', 'Adicionar cupom')
+@extends('layouts.app')
 
-@section('pagina_conteudo')
-	<div class="container">
+@section('content')
+	<div class="container mt-5">
 		<div class="row">
 			<h3>Adicionar cupom</h3>
 			<form method="POST" action="{{ route('admin.cupons.salvar') }}">
 				{{ csrf_field() }}
-				@include('admin.cupom_desconto._form')
+				@include('admin.cupomDesconto._form')
 
-				<button type="submit" class="btn blue">Salvar</button>
+				<button type="submit" class="btn btn-primary">Salvar</button>
 			</form>
 		</div>
 	</div>

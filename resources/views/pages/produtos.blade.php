@@ -30,12 +30,14 @@
                 <button class="action filter__item" data-filter=".MacBook"><span class="action__text">MacBook</span></button>
 
             </div>
-            <form action="{{ route('carrinho.adicionar', ['carrinhoProdutos' => json_encode($produtos)]) }}" method="post">
+            <form action="{{ route('carrinho.index') }}" method="get">
                 {{ csrf_field() }}
                 <button class="cart" type="submit">
                     <i class="cart__icon fa fa-shopping-cart"></i>
                     <span class="text-hidden">Shopping cart</span>
-                    <span class="cart__count">0</span>
+                    <a class="cart__count material-icons">
+                    >
+                    </a>
                 </button>
             </form>
         </div>
@@ -60,11 +62,11 @@
                         <span class="meta__brand">{{ $produto->descricao }}</span>
                         <span class="meta__price">R${{ number_format($produto->preco, 2, ',', '.') }}</span>
                     </div>
-                    {{--<form method="POST" action="{{ route('carrinho.adicionar') }}">--}}
+                    <form method="POST" action="{{ route('carrinho.adicionar') }}">
                         {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $produto->id }}">
-                        <button {{--type="submit"--}} id="{{ $produto->id }}" class="action action--button action--buy btn-carrinho"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
-                    {{--</form>--}}
+                        <button type="submit" id="{{ $produto->id }}" class="action action--button action--buy btn-carrinho"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
+                    </form>
                 </div>
             @endforeach
 
