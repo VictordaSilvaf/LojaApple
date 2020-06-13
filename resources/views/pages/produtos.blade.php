@@ -36,7 +36,7 @@
                     <i class="cart__icon fa fa-shopping-cart"></i>
                     <span class="text-hidden">Shopping cart</span>
                     <a class="cart__count material-icons">
-                    >
+                        >
                     </a>
                 </button>
             </form>

@@ -1,8 +1,8 @@
-﻿@extends('layouts.app')
+﻿@extends('layout')
 @section('head')
 
 @endsection
-@section('content')
+@section('Conteudo')
 
     <div class="container">
 
@@ -62,10 +62,13 @@
                                     </a>
 
                                 </div>
-                                <a href="#"
-                                   onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 0)"
-                                   class="tooltipped" data-position="right" data-delay="50"
-                                   data-tooltip="Retirar produto do carrinho?">Retirar produto</a>
+
+                                <form action="{{ route('carrinho.remover', $pedido_produto->produto_id) }}" method="post">
+                                    @method('delete')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Retirar produto</button>
+                                </form>
+
                             </td>
                             <td> {{ $pedido_produto->produto->nome }} </td>
                             <td>R$ {{ number_format($pedido_produto->produto->preco, 2, ',', '.') }}</td>
@@ -94,7 +97,7 @@
 
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">Cupom de desconto:</span>
+                                <span class="input-group-text" id="basic-addon1" for="Cupom">Cupom de desconto:</span>
                             </div>
                             <input type="hidden" name="pedido_id" value="{{ $pedido->id }}">
                                 <input name="cupom" type="text" class="form-control" placeholder="Cupom" aria-label="Cupom" aria-describedby="basic-addon1">
@@ -125,13 +128,6 @@
         </div>
     </div>
 
-    <form id="form-remover-produto" method="POST" action="{{ route('carrinho.remover') }}">
-        {{ csrf_field() }}
-        {{ method_field('DELETE') }}
-        <input type="hidden" name="pedido_id">
-        <input type="hidden" name="produto_id">
-        <input type="hidden" name="item">
-    </form>
     <form id="form-adicionar-produto" method="POST" action="{{ route('carrinho.adicionar') }}">
         {{ csrf_field() }}
         <input type="hidden" name="id">

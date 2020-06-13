@@ -73,13 +73,11 @@ class CarrinhoController extends Controller
 
     }
 
-    public function remover()
+    public function remover(PedidoProduto $id)
     {
-        $this->middleware('VerifyCsrfToken');
 
         $req = Request();
-        $idpedido = $req->input('pedido_id');
-        $idproduto = $req->input('produto_id');
+        $idproduto = $id;
         $remove_apenas_item = (boolean)$req->input('item');
         $idusuario = Auth::id();
 
@@ -285,7 +283,9 @@ class CarrinhoController extends Controller
     {
         $this->middleware('VerifyCsrfToken');
 
+
         $req = Request();
+
         $idpedido = $req->input('pedido_id');
         $cupom = $req->input('cupom');
         $idusuario = Auth::id();
@@ -301,6 +301,8 @@ class CarrinhoController extends Controller
                 'ativo' => 'S'
             ]
         )->where('dthr_validade', '>', date('Y-m-d H:i:s'))->first();
+
+        dd($cupom);
 
         if (empty($cupom->id)) {
             $req->session()->flash('mensagem-falha', 'Cupom de desconto não encontrado!');

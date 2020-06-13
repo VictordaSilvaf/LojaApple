@@ -82,19 +82,18 @@
 
         <main class="py-4">
 
-            <div class="float-left" style="display: table; position: relative; height: 100vh; z-index: 1">
-                <ul class="btn-group-vertical" style=" position: fixed; top: 45%; display: table-cell; vertical-align: middle; padding: 0">
-                    <a href="{{ route('produto.index') }}" class="btn btn-outline-primary">
-                        Produtos
-                    </a>
-                    <a href="{{ route('carrinho.compras') }}" class="btn btn-outline-primary">
-                        Pedidos
-                    </a>
-                    <a href="/home/cupons" class="btn btn-outline-primary">
-                        Cupons
-                    </a>
-                </ul>
-            </div>
+            @auth()
+                <div class="float-left" style="display: table; position: relative; height: 100vh; z-index: 1">
+                    <ul class="btn-group-vertical" style=" position: fixed; top: 45%; display: table-cell; vertical-align: middle; padding: 0">
+                        <a href="{{ route('produto.index') }}" class="btn btn-outline-primary">
+                            Produtos
+                        </a>
+                        <a href="{{ route('admin.cupons') }}" class="btn btn-outline-primary">
+                            Cupons
+                        </a>
+                    </ul>
+                </div>
+            @endauth
             @yield('content')
         </main>
 
