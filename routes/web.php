@@ -38,7 +38,7 @@ Route::get('/carrinho/adicionar', function() {
     return redirect()->route('index');
 });
 Route::post('produtos/carrinho/adicionar', 'CarrinhoController@adicionar')->name('carrinho.adicionar');
-Route::delete('produtos/carrinho/remover/{id}', 'CarrinhoController@remover')->name('carrinho.remover');
+Route::delete('produtos/carrinho/{id}/remover', 'CarrinhoController@remover')->name('carrinho.remover');
 Route::post('produtos/carrinho/concluir', 'CarrinhoController@concluir')->name('carrinho.concluir');
 Route::get('produtos/carrinho/compras', 'CarrinhoController@compras')->name('carrinho.compras');
 Route::post('produtos/carrinho/cancelar', 'CarrinhoController@cancelar')->name('carrinho.cancelar');

@@ -302,8 +302,6 @@ class CarrinhoController extends Controller
             ]
         )->where('dthr_validade', '>', date('Y-m-d H:i:s'))->first();
 
-        dd($cupom);
-
         if (empty($cupom->id)) {
             $req->session()->flash('mensagem-falha', 'Cupom de desconto não encontrado!');
             return redirect()->route('carrinho.index');
