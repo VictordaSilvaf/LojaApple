@@ -23,12 +23,12 @@
                         <tr>
                             <th scope="row">
                                 <a class="btn-flat tooltipped" href="{{ route('admin.cupons.editar', $cupom->id) }}"
-                                   class="btn-flat tooltipped" data-position="right" data-delay="50"
+                                   data-position="right" data-delay="50"
                                    data-tooltip="Editar cupom?">
                                     <i class="material-icons black-text">mode_edit</i>
                                 </a>
                                 <a class="btn-flat tooltipped" href="{{ route('admin.cupons.deletar', $cupom->id) }}"
-                                   class="btn-flat tooltipped" data-position="right" data-delay="50"
+                                   data-position="right" data-delay="50"
                                    data-tooltip="Deletar cupom?">
                                     <i class="material-icons black-text">delete</i>
                                 </a>

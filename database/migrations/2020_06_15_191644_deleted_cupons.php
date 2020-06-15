@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCupomDescontosTable extends Migration
+class DeletedCupons extends Migration
 {
     /**
      * Run the migrations.
@@ -23,7 +23,6 @@ class CreateCupomDescontosTable extends Migration
             $table->enum('modo_limite', ['valor', 'qtd'])->default('qtd');
             $table->dateTime('dthr_validade');
             $table->enum('ativo', ['S', 'N'])->default('S');
-            $table->softDeletes();
             $table->timestamps();
         });
     }

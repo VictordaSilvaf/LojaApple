@@ -32,13 +32,15 @@
                            aria-label="Recipient's username" aria-describedby="basic-addon2"
                            name="descricao" id="descricao" value="{{ $produto->descricao }}" required>
                 </div>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3 form-group">
                     <div class="input-group-append">
-                        <span class="input-group-text" id="basic-addon2">Categoria: </span>
+                        <label for="exampleFormControlSelect1" class="input-group mb-3 input-group-text" id="basic-addon2">Categoria: </label>
                     </div>
-                    <input type="text" class="form-control" placeholder="Categoria do produto"
-                           aria-label="Recipient's username" aria-describedby="basic-addon2"
-                           name="categoria" id="categoria" value="{{ $produto->categoria }}" required>
+                    <select class="form-control" id="exampleFormControlSelect1" aria-describedby="basic-addon2" name="categoria" id="categoria" required>
+                        <option>Smartfone</option>
+                        <option>AirPods</option>
+                        <option>MacBook</option>
+                    </select>
                 </div>
                 <div class="input-group mb-3">
                     <div class="custom-file">

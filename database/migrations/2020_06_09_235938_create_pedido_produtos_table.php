@@ -25,9 +25,9 @@ class CreatePedidoProdutosTable extends Migration
             $table->timestamps();
 
 
-            $table->foreign('pedido_id')->references('id')->on('pedidos');
-            $table->foreign('produto_id')->references('id')->on('produtos');
-            $table->foreign('cupom_desconto_id')->references('id')->on('cupom_descontos');
+            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
+            $table->foreign('produto_id')->references('id')->on('produtos')->onDelete('cascade');
+            $table->foreign('cupom_desconto_id')->references('id')->on('cupom_descontos')->onDelete('cascade');
         });
     }
 

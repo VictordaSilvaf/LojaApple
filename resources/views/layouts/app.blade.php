@@ -27,7 +27,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm fixed-top" style="padding: 0 0 0 10px !important;">
+        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand text-white" href="{{ url('/') }}" style="padding: 0px !important;">
                     <span style="font-size: 2.2em;" id="iconeBanner">

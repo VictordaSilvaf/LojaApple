@@ -21,6 +21,7 @@ class CreateProdutosTable extends Migration
             $table->text('descricao');
             $table->string('categoria');
             $table->enum('ativo', ['S', 'N'])->default('S');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

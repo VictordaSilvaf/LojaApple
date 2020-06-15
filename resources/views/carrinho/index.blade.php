@@ -49,8 +49,8 @@
                                      src="{{ asset('storage/'.$pedido_produto->produto->src) }}">
                             </td>
                             <td class="center-align">
-                                <div class="center-align">
-                                    {{--            Adicionar ou remover produto                --}}
+                                {{--<div class="center-align">
+                                    --}}{{--            Adicionar ou remover produto                --}}{{----}}{{--
                                     <a class="" href="#"
                                        onclick="carrinhoRemoverProduto({{ $pedido->id }}, {{ $pedido_produto->produto_id }}, 1 )">
                                         <i class="material-icons small">remove_circle_outline</i>
@@ -59,9 +59,9 @@
                                     <a class="" href="#"
                                        onclick="carrinhoAdicionarProduto({{ $pedido_produto->produto_id }})">
                                         <i class="material-icons small">add_circle_outline</i>
-                                    </a>
+                                    </a>--}}{{--
 
-                                </div>
+                                </div>--}}
 
                                 <form action="{{ route('carrinho.remover', $pedido_produto->produto_id) }}" method="post">
                                     @method('delete')

@@ -4,13 +4,14 @@
 @endsection
 @section('content')
     @auth
+
         <div class="row">
             <div class="col-10 offset-1" style="margin-top: 60px; z-index: 0">
                 <div class="row justify-content-center">
                     <div class="col-md-9">
                         <div class="card">
                             <div class="card-header">
-                                <span><h3 class="d-inline-flex">Dashboard</h3></span>
+                                <span><h3 class="d-inline-flex">Dashboard Produtos</h3></span>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-success" data-toggle="modal"
                                         data-target="#adicionarModal" style="float: right">Adicionar
@@ -86,75 +87,75 @@
 
                             </div>
                         </div>
-
-                        <!-- Modal Cadastrar-->
-                        <div class="modal fade" id="adicionarModal" tabindex="-1" role="dialog"
-                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Adicionar Produto</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <form method="post" action="/home" enctype="multipart/form-data">
-                                        <div style="margin: 15px 10px 0px 10px">
-                                            @csrf
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text" id="basic-addon2">Nome: </span>
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="Nome do produto"
-                                                       aria-label="Recipient's username" aria-describedby="basic-addon2"
-                                                       name="nome" id="nome" required>
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text" id="basic-addon2">Preço: </span>
-                                                </div>
-                                                <input type="number" class="form-control" placeholder="Preço do produto"
-                                                       aria-label="Recipient's username" aria-describedby="basic-addon2"
-                                                       name="preco" id="preco" required>
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text" id="basic-addon2">Descrição: </span>
-                                                </div>
-                                                <input type="text" class="form-control"
-                                                       placeholder="Descrição do produto"
-                                                       aria-label="Recipient's username" aria-describedby="basic-addon2"
-                                                       name="descricao" id="descricao" required>
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text" id="basic-addon2">Categoria: </span>
-                                                </div>
-                                                <input type="text" class="form-control"
-                                                       placeholder="Categoria do produto"
-                                                       aria-label="Recipient's username" aria-describedby="basic-addon2"
-                                                       name="categoria" id="categoria" required>
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputGroupFile02"
-                                                           name="src" value="null" required>
-                                                    <label class="custom-file-label"
-                                                           for="inputGroupFile02">Imagem do produto</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                                Cancelar
-                                            </button>
-                                            <button type="submit" class="btn btn-primary">Salvar Produto</button>
-                                        </div>
-                                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Cadastrar-->
+        <div class="modal fade" id="adicionarModal" tabindex="-1" role="dialog"
+             aria-labelledby="adicionarModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Adicionar Produto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="post" action="/home" enctype="multipart/form-data">
+                        <div style="margin: 15px 10px 0 10px" class="form-group">
+                            @csrf
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">Nome: </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Nome do produto"
+                                       aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                       name="nome" id="nome" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">Preço: </span>
+                                </div>
+                                <input type="number" class="form-control" placeholder="Preço do produto"
+                                       aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                       name="preco" id="preco" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">Descrição: </span>
+                                </div>
+                                <input type="text" class="form-control"
+                                       placeholder="Descrição do produto"
+                                       aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                       name="descricao" id="descricao" required>
+                            </div>
+                            <div class="input-group mb-3 form-group">
+                                <div class="input-group-append">
+                                    <label for="exampleFormControlSelect1" class="input-group mb-3 input-group-text" id="basic-addon2">Categoria: </label>
+                                </div>
+                                <select class="form-control" id="exampleFormControlSelect1" aria-describedby="basic-addon2" name="categoria" id="categoria" required>
+                                    <option>Smartfone</option>
+                                    <option>AirPods</option>
+                                    <option>MacBook</option>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile02"
+                                           name="src" value="null" required>
+                                    <label class="custom-file-label"
+                                           for="inputGroupFile02">Imagem do produto</label>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn btn-primary">Salvar Produto</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

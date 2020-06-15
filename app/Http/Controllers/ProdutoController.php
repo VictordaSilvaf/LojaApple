@@ -48,17 +48,6 @@ class ProdutoController extends Controller
         return redirect()->route('produto.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Produto $id)
-    {
-        //
-    }
-
     public function edit(Produto $id)
     {
         return view('admin.edit')->with('produto', $id);

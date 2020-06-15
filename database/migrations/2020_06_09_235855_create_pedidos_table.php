@@ -18,7 +18,7 @@ class CreatePedidosTable extends Migration
             $table->enum('status', ['RE', 'PA', 'CA']); // Reservado, Pago, Cancelado
             $table->timestamps();
             $table->unsignedBigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

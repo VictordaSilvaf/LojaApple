@@ -36,7 +36,7 @@ class CarrinhoController extends Controller
         $req = Request();
         $idproduto = $req->input('id');
 
-        $produto = Produto::create($req->all());
+        $produto = Produto::find($idproduto);
 
         if( empty($produto->id) ) {
             $req->session()->flash('mensagem-falha', 'Produto não encontrado em nossa loja!');
@@ -83,7 +83,7 @@ class CarrinhoController extends Controller
 
         $idpedido = Pedido::consultaId(
             [
-                'id' => $idpedido,
+                'id' => $idproduto,
                 'user_id' => $idusuario,
                 'status' => 'RE' // Reservada
             ]
